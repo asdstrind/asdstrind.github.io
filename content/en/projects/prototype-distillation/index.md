@@ -11,7 +11,7 @@ methods:
   - "Similarity constraints"
   - "2D total variation regularization"
   - "Gramian Angular Field (GAF) transformation"
-  - "Fixed ResNet-2D evaluation network"
+  - "Fixed ResNet-2D network for prototype optimization"
 build:
   list: never
 ---
@@ -25,7 +25,7 @@ Developed a learnable data-prototype pipeline for compressing battery aging cycl
 - Formulated data reduction around SOH label semantics, overall distribution, and temporal structure.
 - Treated prototypes as learnable variables, using SOH anchors and Huber regression loss for label semantics.
 - Added MMD-based feature-distribution alignment, similarity constraints, and 2D total variation regularization.
-- Transformed voltage, current, and time sequences into GAF images and evaluated prototype updates with a fixed ResNet-2D network.
+- Transformed voltage and current prototypes together with a fixed temporal channel t into GAF representations, back-propagated the joint objective through a fixed ResNet-2D network to optimize only the prototype V and I variables, and kept t fixed as a temporal conditioning/indexing variable to preserve ordering and physical consistency. SOH estimation was performed separately with the CNN–Transformer–KAN predictor.
 - Compared Random, Stratified, and Full-data baselines on HNEL and Toyota-MIT datasets.
 
 ## Status

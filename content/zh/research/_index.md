@@ -26,7 +26,7 @@ title: "研究"
 **导师：** Xiang Li  
 **时间：** 02/2026–Present · **状态：** 审稿中
 
-该工作将 data prototypes 视为 learnable variables，而非选取的真实样本。使用 SOH anchors 与 Huber regression loss 保留标签语义，使用 MMD 对齐特征分布，并通过 similarity constraints 与 2D total variation regularization 处理 signal drift 和局部伪影。使用 GAF representations 与 fixed ResNet-2D evaluation network，在 HNEL 和 Toyota-MIT data 上研究压缩效果。该网站不公开 manuscript 或 private research assets。
+该工作将 data prototypes 视为 learnable variables，而非选取的真实样本。使用 SOH anchors 与 Huber regression loss 保留标签语义，使用 MMD 对齐特征分布，并通过 similarity constraints 与 2D total variation regularization 处理 signal drift 和局部伪影。电压和电流原型与固定的时间通道 t 一同转换为 GAF 表示后输入固定的 ResNet-2D 网络，通过该路径反向传播联合目标并仅更新 prototype 中的 V、I；t 作为固定的时间索引和 conditioning variable 保持时间顺序与物理一致性，SOH 估计由独立的 CNN–Transformer–KAN 模型完成。该网站不公开 manuscript 或 private research assets。
 
 ## Edge Intelligence for Battery Management Systems
 

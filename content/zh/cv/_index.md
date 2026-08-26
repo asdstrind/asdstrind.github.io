@@ -30,7 +30,7 @@ title: "简历"
 
 - 围绕 SOH label semantics、overall distribution 和 temporal structure 建立 data reduction 的三个目标。
 - 将 prototypes 视为 learnable variables，使用 SOH anchors、Huber regression loss、Maximum Mean Discrepancy (MMD)、similarity constraints 和 2D total variation regularization。
-- 将 voltage、current 和 time sequences 转换为 Gramian Angular Field (GAF) images，使用 fixed ResNet-2D evaluation network 提取特征，并通过 joint-loss back-propagation 更新 prototypes。
+- 将 voltage 和 current prototypes 与固定的 time channel t 一同转换为 GAF 表示后输入固定的 ResNet-2D 网络，通过联合目标反向传播并仅更新 prototype 中的 V、I；t 作为固定的时间索引和 conditioning variable 保持时间顺序与物理一致性，SOH 估计由独立的 CNN–Transformer–KAN 模型完成。
 - 在 HNEL 和 Toyota-MIT 数据集上与 Random、Stratified 和 Full-data baselines 进行比较。
 
 **报告结果：** 在 submitted manuscript 的 HNEL setup 中，使用三个 synthetic prototypes 时 MAE 为 0.0192；在 extreme compression 条件下，degradation trends 比相同数量的 real samples 更稳定。

@@ -30,7 +30,7 @@ This structured page complements the downloadable PDF CV and does not replace it
 
 - Formulated data reduction around SOH label semantics, overall distribution, and temporal structure.
 - Treated prototypes as learnable variables; used SOH anchors and Huber regression loss, Maximum Mean Discrepancy (MMD), similarity constraints, and 2D total variation regularization.
-- Transformed voltage, current, and time sequences into Gramian Angular Field (GAF) images, extracted features with a fixed ResNet-2D evaluation network, and updated prototypes through joint-loss back-propagation.
+- Transformed voltage and current prototypes, together with a fixed temporal channel t, into Gramian Angular Field (GAF) representations, passed them through a fixed ResNet-2D network, and back-propagated the joint objective to update only the prototype V and I variables; t remained fixed as a temporal conditioning/indexing variable, and SOH estimation was performed separately with the CNN–Transformer–KAN predictor.
 - Evaluated on HNEL and Toyota-MIT against Random, Stratified, and Full-data baselines.
 
 **Reported result:** In the HNEL setup of the submitted manuscript, three synthetic prototypes achieved MAE 0.0192 and maintained degradation trends more stably than the same number of real samples under extreme compression conditions.

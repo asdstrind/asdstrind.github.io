@@ -26,7 +26,7 @@ This project established a reproducible interface for heterogeneous battery data
 **Advisor:** Xiang Li  
 **Period:** 02/2026–Present · **Status:** Under review
 
-This work treats data prototypes as learnable variables rather than selected real samples. SOH anchors and Huber regression loss preserve label semantics; MMD aligns feature distributions; similarity constraints and 2D total variation regularization address signal drift and local artifacts. GAF representations and a fixed ResNet-2D evaluation network are used to study compression on HNEL and Toyota-MIT data. No manuscript or private research assets are exposed on this site.
+This work treats data prototypes as learnable variables rather than selected real samples. SOH anchors and Huber regression loss preserve label semantics; MMD aligns feature distributions; similarity constraints and 2D total variation regularization address signal drift and local artifacts. Voltage and current prototypes, paired with a fixed temporal channel t, are transformed into GAF representations and passed through a fixed ResNet-2D network; the joint objective is back-propagated through this path to optimize only the prototype V and I variables. The fixed t channel remains a temporal conditioning/indexing variable, while SOH estimation is handled separately by the CNN–Transformer–KAN predictor. No manuscript or private research assets are exposed on this site.
 
 ## Edge Intelligence for Battery Management Systems
 
