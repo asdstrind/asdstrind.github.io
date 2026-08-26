@@ -993,3 +993,148 @@ body {
     font-size: 0.94rem;
   }
 }
+
+/* Index pages retain HugoBlox's rendered markup, but use the site's compact
+   academic hierarchy instead of the theme's large prose scale. This selector
+   deliberately stops at the generic inner article so the homepage remains the
+   canonical reference and custom detail pages keep their own layout. */
+.academic-main--inner .page-body > .max-w-prose > article.prose {
+  color: var(--academic-text);
+  font-family: inherit;
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.academic-main--inner .page-body > .max-w-prose > article.prose > h1 {
+  margin: 0 0 20px;
+  color: var(--academic-navy);
+  font-size: clamp(1.7rem, 2.2vw, 1.9rem) !important;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.academic-main--inner .page-body > .max-w-prose > article.prose > h1::after {
+  display: block;
+  width: 44px;
+  height: 3px;
+  margin-top: 12px;
+  background: var(--academic-blue);
+  content: "";
+}
+
+.academic-main--inner .page-body > .max-w-prose > article.prose > h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 30px 0 13px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--academic-border);
+  color: var(--academic-navy);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.academic-main--inner .page-body > .max-w-prose > article.prose > h2::before {
+  display: block;
+  width: 3px;
+  height: 1.15em;
+  flex: 0 0 3px;
+  background: var(--academic-blue);
+  content: "";
+}
+
+.academic-main--inner .page-body > .max-w-prose > article.prose > h3 {
+  margin: 20px 0 6px;
+  color: var(--academic-navy);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.academic-main--inner .page-body > .max-w-prose > article.prose > p,
+.academic-main--inner .page-body > .max-w-prose > article.prose > ul,
+.academic-main--inner .page-body > .max-w-prose > article.prose > ol {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.academic-main--inner .page-body > .max-w-prose > article.prose > h1 + p {
+  margin-top: 0;
+}
+
+.academic-main--inner .page-body > .max-w-prose > article.prose > h2 + p,
+.academic-main--inner .page-body > .max-w-prose > article.prose > h3 + p {
+  color: var(--academic-muted);
+  font-size: 0.87rem;
+  line-height: 1.52;
+}
+
+.academic-main--inner .page-body > .max-w-prose > article.prose > h2 + p strong,
+.academic-main--inner .page-body > .max-w-prose > article.prose > h3 + p strong {
+  color: var(--academic-navy);
+  font-weight: 700;
+}
+
+.academic-main--inner .page-body > .max-w-prose > article.prose > p,
+.academic-main--inner .page-body > .max-w-prose > article.prose > li {
+  color: var(--academic-text);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.academic-main--inner .page-body > .max-w-prose > article.prose > ul,
+.academic-main--inner .page-body > .max-w-prose > article.prose > ol {
+  padding-left: 1.25rem;
+}
+
+.academic-main--inner .page-body > .max-w-prose > article.prose > li + li {
+  margin-top: 5px;
+}
+
+.academic-main--inner .page-body > .max-w-prose > article.prose strong {
+  color: var(--academic-navy);
+  font-weight: 700;
+}
+
+.academic-main--inner .page-body > .max-w-prose > article.prose a {
+  color: var(--academic-blue);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.academic-main--inner .page-body > .max-w-prose > article.prose code {
+  color: var(--academic-navy);
+  font-size: 0.9em;
+}
+
+/* Detail pages are intentionally a touch larger than index entries, but not
+   dramatically larger than the homepage profile name. */
+.academic-detail__title {
+  font-size: clamp(1.7rem, 2.3vw, 2.1rem);
+  line-height: 1.18;
+}
+
+@media (max-width: 767px) {
+  .academic-main--inner .page-body > .max-w-prose > article.prose > h1 {
+    margin-bottom: 18px;
+    font-size: 1.6rem !important;
+    line-height: 1.22;
+  }
+
+  .academic-main--inner .page-body > .max-w-prose > article.prose > h2 {
+    margin-top: 26px;
+    font-size: 1.16rem;
+  }
+
+  .academic-main--inner .page-body > .max-w-prose > article.prose > h3 {
+    font-size: 1.03rem;
+  }
+
+  .academic-detail__title {
+    font-size: 1.62rem;
+  }
+}
