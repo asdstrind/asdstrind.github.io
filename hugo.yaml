@@ -82,7 +82,7 @@ params:
     author: "Zihan Gong"
     description: "Academic homepage of Zihan Gong, an undergraduate researcher in Intelligent Manufacturing Engineering at Xi’an Jiaotong University."
   externalLinks:
-    github: "https://github.com/asdstrind?tab=repositories"
+    github: "https://github.com/asdstrind"
     huggingFace: "https://huggingface.co/coinlearner"
     email: "ZHGong_XJTU@163.com"
 

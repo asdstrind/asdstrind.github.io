@@ -31,99 +31,82 @@ sections:
     content:
       title: "Current Research"
       text: |
-        **Generalizable Battery Intelligence**
-
-        Learning transferable degradation representations across heterogeneous battery datasets, with few-shot target-domain supervision and explicit distribution alignment.
-
-        **Data-Efficient Learning and Prototype Distillation**
-
-        Designing learnable synthetic prototypes for regression tasks so that SOH semantics, cross-sample distributions, and degradation-sequence structure remain useful under aggressive data compression.
-
-        **Foundation Models for Energy Systems**
-
-        Building data and modeling infrastructure for multimodal foundation models that unify SOH and RUL estimation across multiple battery domains and support early degradation detection.
-
-        **Edge Intelligence for Battery Management Systems**
-
-        Evaluating lightweight architectures with BMS-relevant parameter counts, FLOPs, and inference latency so that cross-domain accuracy is considered together with deployment feasibility.
-
+        <div class="research-grid">
+        <article class="research-grid__item">
+        <h3>Generalizable Battery Intelligence</h3>
+        <p>Learning transferable degradation representations across heterogeneous battery datasets, with few-shot target-domain supervision and explicit distribution alignment.</p>
+        </article>
+        <article class="research-grid__item">
+        <h3>Data-Efficient Learning and Prototype Distillation</h3>
+        <p>Designing learnable synthetic prototypes for regression tasks so that SOH semantics, cross-sample distributions, and degradation-sequence structure remain useful under aggressive data compression.</p>
+        </article>
+        <article class="research-grid__item">
+        <h3>Foundation Models for Energy Systems</h3>
+        <p>Building data and modeling infrastructure for multimodal foundation models that unify SOH and RUL estimation across multiple battery domains and support early degradation detection.</p>
+        </article>
+        <article class="research-grid__item">
+        <h3>Edge Intelligence for Battery Management Systems</h3>
+        <p>Evaluating lightweight architectures with BMS-relevant parameter counts, FLOPs, and inference latency so that cross-domain accuracy is considered together with deployment feasibility.</p>
+        </article>
+        </div>
   - block: markdown
     id: selected-publications
     content:
       title: "Selected Publications"
       text: |
-        ### Published
-
-        **A Large Multimodal Foundation Model for Unified State-of-Health and Remaining Useful Life Estimation of Lithium-ion Batteries**
-
-        Wending Zhu, Xiang Li, Zihan Gong, Mamdouh Abdelsalam, Wei Zhang, and Shaojie Yang · *Journal of Energy Storage* 177 (2026): 123418 · Published
-
-        Paper focus: a multimodal foundation model for unified SOH/RUL estimation from heterogeneous battery data, with parameter-efficient fine-tuning and anomaly detection. [DOI](https://doi.org/10.1016/j.est.2026.123418)
-
-        **Generalized Foundation Model for Lithium-ion Battery State-of-Health Prediction with Distribution Metric Learning**
-
-        Zihan Gong, Xiang Li, Wei Zhang, and Shaojie Yang · *Journal of Energy Storage* 150 (2026): 120566 · Published
-
-        Paper focus: a multi-source, few-shot SOH estimation framework using MMD-based distribution alignment and a lightweight ResNet–Transformer–KAN architecture. [DOI](https://doi.org/10.1016/j.est.2026.120566)
-
-        ### Under Review
-
-        **Task-Guided Prototype Distillation for Regression with Structure Preservation in Lithium-Ion Battery State-of-Health Estimation**
-
-        Zihan Gong; additional authors: [TO BE PROVIDED] · *IEEE Transactions on Emerging Topics in Computational Intelligence* · Under review
-
-        Research summary: learnable battery data prototypes are optimized to preserve SOH label semantics, feature distributions, and degradation-sequence structure. No manuscript, supplementary material, code, or download link is provided while the paper is under review.
-
-        [View all publication records](publications/)
-
+        <div class="academic-list academic-publication-list">
+        <div class="academic-list__group">
+        <h3>Published</h3>
+        <article class="academic-list__item">
+        <h4>A Large Multimodal Foundation Model for Unified State-of-Health and Remaining Useful Life Estimation of Lithium-ion Batteries</h4>
+        <p class="academic-list__meta">Wending Zhu, Xiang Li, Zihan Gong, Mamdouh Abdelsalam, Wei Zhang, and Shaojie Yang · <em>Journal of Energy Storage</em> 177 (2026): 123418 · Published</p>
+        <p>Paper focus: a multimodal foundation model for unified SOH/RUL estimation from heterogeneous battery data, with parameter-efficient fine-tuning and anomaly detection. <a href="https://doi.org/10.1016/j.est.2026.123418">DOI</a></p>
+        </article>
+        <article class="academic-list__item">
+        <h4>Generalized Foundation Model for Lithium-ion Battery State-of-Health Prediction with Distribution Metric Learning</h4>
+        <p class="academic-list__meta">Zihan Gong, Xiang Li, Wei Zhang, and Shaojie Yang · <em>Journal of Energy Storage</em> 150 (2026): 120566 · Published</p>
+        <p>Paper focus: a multi-source, few-shot SOH estimation framework using MMD-based distribution alignment and a lightweight ResNet–Transformer–KAN architecture. <a href="https://doi.org/10.1016/j.est.2026.120566">DOI</a></p>
+        </article>
+        </div>
+        <div class="academic-list__group">
+        <h3>Under Review</h3>
+        <article class="academic-list__item">
+        <h4>Task-Guided Prototype Distillation for Regression with Structure Preservation in Lithium-Ion Battery State-of-Health Estimation</h4>
+        <p class="academic-list__meta">Zihan Gong; additional authors: [TO BE PROVIDED] · <em>IEEE Transactions on Emerging Topics in Computational Intelligence</em> · Under review</p>
+        <p>Research summary: learnable battery data prototypes are optimized to preserve SOH label semantics, feature distributions, and degradation-sequence structure. No manuscript, supplementary material, code, or download link is provided while the paper is under review.</p>
+        </article>
+        </div>
+        <p class="academic-list__more"><a href="publications/">View all publication records</a></p>
+        </div>
   - block: markdown
     id: selected-projects
     content:
       title: "Selected Projects"
       text: |
-        ### Battery Dataset Processing and Infrastructure
-
-        03/2026–04/2026 · Advisor: Xiang Li
-
-        Built a reproducible Python pipeline for heterogeneous battery data, including `.csv`/`.mat` ingestion, outlier removal, 256-point downsampling, `.pkl` serialization, and validation across 11 datasets. [View project record](projects/battery-dataset-processing/)
-
-        ### Multimodal Foundation Model Data and Evaluation
-
-        03/2026–04/2026 · Advisor: Xiang Li
-
-        Contributed the multi-source battery data preprocessing and standardization pipeline used to support downstream multimodal model training and evaluation. [View project record](projects/multimodal-foundation-model/)
-
-        ### Task-Guided Prototype Distillation
-
-        02/2026–Present · Advisor: Xiang Li · Under review
-
-        Developed a structure-preserving prototype-generation pipeline for regression on battery aging sequences. [View project record](projects/prototype-distillation/)
-
-        ### Edge-Constrained Generalized SOH Estimation
-
-        09/2024–12/2025 · Advisor: Xiang Li
-
-        Studied cross-domain SOH prediction with few-shot target labels and BMS-aware efficiency evaluation. [View project record](projects/edge-soh-deployment/)
-
-        ### Mathematical Modeling Competition
-
-        09/2025 · CUMCM Problem B · Award: First Prize, China Undergraduate Mathematical Contest in Modeling (CUMCM), Shaanxi Division, 2025
-
-        Contributed to kinematic modeling, line-of-sight occlusion criteria, PSO/GA optimization, and C++ implementation. [View project record](projects/cumcm-smoke-jamming-optimization/)
-
-        ### Industrial Computer Vision Internship
-
-        07/2026 · Geely Automobile Xi’an Manufacturing Base
-
-        Implemented and evaluated a single-template wheel hub recognition scheme with a rejection mechanism. [View project record](projects/geely-wheel-hub-recognition/)
-
+        <div class="academic-list academic-project-list">
+        <article class="academic-list__item">
+        <h3>Task-Guided Prototype Distillation</h3>
+        <p class="academic-list__meta">02/2026–Present · Advisor: Xiang Li · Under review</p>
+        <p>Developed a structure-preserving prototype-generation pipeline for regression on battery aging sequences. <a href="projects/prototype-distillation/">View project record</a></p>
+        </article>
+        <article class="academic-list__item">
+        <h3>Generalizable Cross-Domain Battery SOH Estimation</h3>
+        <p class="academic-list__meta">09/2024–12/2025 · Advisor: Xiang Li</p>
+        <p>Studied transferable degradation representations for cross-domain SOH prediction with few-shot target labels and BMS-aware efficiency evaluation. <a href="projects/edge-soh-deployment/">View project record</a></p>
+        </article>
+        <article class="academic-list__item">
+        <h3>Battery Dataset Processing and Infrastructure</h3>
+        <p class="academic-list__meta">03/2026–04/2026 · Advisor: Xiang Li</p>
+        <p>Built a reproducible Python pipeline for heterogeneous battery data, including <code>.csv</code>/<code>.mat</code> ingestion, outlier removal, 256-point downsampling, <code>.pkl</code> serialization, and validation across 11 datasets. <a href="projects/battery-dataset-processing/">View project record</a></p>
+        </article>
+        </div>
   - block: markdown
     id: contact
     content:
       title: "Contact"
       text: |
         Email: [ZHGong_XJTU@163.com](mailto:ZHGong_XJTU@163.com)  
-        Location: No. 28 West Xianning Road, Beilin District, Xi’an, Shaanxi, China 710049  
-        GitHub: [github.com/asdstrind](https://github.com/asdstrind?tab=repositories)  
+        Location: Xi'an, Shaanxi, China  
+        GitHub: [github.com/asdstrind](https://github.com/asdstrind)  
         Hugging Face: [huggingface.co/coinlearner](https://huggingface.co/coinlearner)
 ---

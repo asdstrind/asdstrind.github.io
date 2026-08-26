@@ -303,7 +303,7 @@ body {
 }
 
 body {
-  font-family: "Source Sans 3", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -463,41 +463,146 @@ body {
   padding: 2px 0;
 }
 
-.academic-main #current-research .prose > p:first-child {
-  margin-bottom: 12px;
-  padding-left: 11px;
-  border-left: 2px solid var(--academic-blue);
-  color: var(--academic-navy);
-  font-size: 1.05rem;
-  line-height: 1.45;
+.academic-main #current-research .prose {
+  max-width: none !important;
 }
 
-.academic-main #current-research .prose ul {
+.academic-main #current-research .research-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  padding: 0;
-  list-style: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 20px;
+  width: 100%;
+  min-width: 0;
 }
 
-.academic-main #current-research .prose li {
-  margin: 0;
-  padding: 9px 12px;
+.academic-main #current-research .research-grid__item {
+  min-width: 0;
+  min-height: 154px;
+  box-sizing: border-box;
+  padding: 16px 18px 17px;
   border: 1px solid var(--academic-border);
-  border-top: 2px solid #bfdbfe;
-  background: #fbfdff;
+  border-top: 2px solid #93c5fd;
+  background: #ffffff;
+}
+
+.academic-main #current-research .research-grid__item h3 {
+  margin: 0 0 8px;
+  color: var(--academic-navy);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.academic-main #current-research .research-grid__item p {
+  margin: 0;
+  color: var(--academic-muted);
+  font-size: 0.94rem;
+  line-height: 1.58;
+  overflow-wrap: anywhere;
+}
+
+.academic-list {
+  width: 100%;
   color: var(--academic-text);
-  line-height: 1.45;
+}
+
+.academic-list__group + .academic-list__group {
+  margin-top: 26px;
+}
+
+.academic-list__group > h3 {
+  margin: 0 0 2px;
+  color: var(--academic-blue);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.academic-list__item {
+  min-width: 0;
+  padding: 17px 0 18px;
+  border-top: 1px solid var(--academic-border);
+}
+
+.academic-list__group .academic-list__item:first-of-type {
+  border-top: 0;
+  padding-top: 11px;
+}
+
+.academic-list__item h3,
+.academic-list__item h4 {
+  margin: 0;
+  color: var(--academic-navy);
+  font-weight: 700;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.academic-list__item h4 {
+  font-size: 1.05rem;
+}
+
+.academic-project-list .academic-list__item h3 {
+  font-size: 1rem;
+}
+
+.academic-list__item p {
+  margin: 7px 0 0;
+  color: var(--academic-muted);
+  font-size: 0.94rem;
+  line-height: 1.58;
+  overflow-wrap: anywhere;
+}
+
+.academic-list__item .academic-list__meta {
+  margin-top: 5px;
+  color: var(--academic-muted);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.academic-list__item .academic-list__meta em {
+  font-style: italic;
+}
+
+.academic-list__item a,
+.academic-list__more a {
+  color: var(--academic-blue);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.academic-list__item code {
+  color: var(--academic-navy);
+  font-size: 0.9em;
+}
+
+.academic-list__more {
+  margin: 14px 0 0;
+  font-size: 0.92rem;
+}
+
+.academic-main #selected-projects .academic-list__item {
+  padding-top: 15px;
+  padding-bottom: 16px;
+}
+
+.academic-main #selected-projects .academic-list__item:first-child {
+  border-top: 0;
+  padding-top: 0;
 }
 
 .academic-main #selected-publications .prose,
 .academic-main #selected-projects .prose {
   box-sizing: border-box;
-  padding: 10px 14px;
-  border-left: 2px solid var(--academic-blue);
-  background: #fbfdff;
-  color: var(--academic-muted);
-  font-style: italic;
+  padding: 0;
+  border-left: 0;
+  background: transparent;
+  color: var(--academic-text);
+  font-style: normal;
 }
 
 .academic-main #contact .prose {
@@ -555,6 +660,12 @@ body {
   }
 }
 
+@media (max-width: 599px) {
+  .academic-main #current-research .research-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
 /* Inner pages use a wider academic reading column than the theme's default
    prose container. The homepage keeps its existing section-scoped layout. */
 .academic-main--inner > .page-body {
