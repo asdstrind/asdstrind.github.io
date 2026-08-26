@@ -4,6 +4,8 @@ title: "Projects"
 
 Projects are ordered by relevance to battery intelligence, data-efficient learning, and deployment-aware machine learning.
 
+## Research Projects
+
 ### Battery Dataset Processing and Infrastructure
 
 **Period:** 03/2026–04/2026 · **Advisor:** Xiang Li  
@@ -24,6 +26,8 @@ Developed a learnable prototype-generation pipeline that targets SOH semantics, 
 **Period:** 09/2024–12/2025 · **Advisor:** Xiang Li  
 Studied cross-domain SOH prediction with few-shot target labels and evaluated accuracy, parameter count, FLOPs, and inference latency for BMS deployment. [View full record](edge-soh-deployment/)
 
+## Competitions
+
 ### Optimization of Smoke Jamming Projectile Launch Strategy Based on a Coupled Multi-Algorithm Framework
 
 **Competition:** 2025 China Undergraduate Mathematical Contest in Modeling (CUMCM), Problem B  
@@ -35,6 +39,8 @@ Contributed to kinematic modeling, line-of-sight occlusion criteria, exhaustive 
 **Competition:** 2025 Mathematical Contest In Modeling/Interdisciplinary Contest In Modeling (MCM/ICM), Problem E  
 **Period:** 01/2025 · **Outcome:** Meritorious Winner (certificate supplied)  
 Contributed to multi-species reaction-diffusion modeling, sensitivity analysis, MATLAB simulation, visualization, and LaTeX typesetting. [View full record](mcm-icm-green-agriculture/)
+
+## Industry Experience
 
 ### Single-Template Retrieval-Based Wheel Hub Recognition at Geely Automobile Xi’an Manufacturing Base
 

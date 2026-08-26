@@ -11,7 +11,7 @@
     <div class="academic-layout">
       {{ partial "academic-sidebar" . }}
 
-      <div class="academic-main{{ if not .IsHome }} academic-main--inner{{ end }}">
+      <div class="academic-main{{ if not .IsHome }} academic-main--inner academic-main--{{ .Section }}{{ end }}">
         <div class="page-header {{ if site.Params.hugoblox.header.sticky }}sticky top-0 z-30{{ end }}">
           {{/* Keep the HugoBlox header extension point available. */}}
           {{ $show_navbar := ((site.Params.hugoblox.header.enable | default true) | and (ne .Params.header.navbar.enable false)) | or .Params.header.navbar.enable }}

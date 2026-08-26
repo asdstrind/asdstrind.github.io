@@ -1138,3 +1138,94 @@ body {
     font-size: 1.62rem;
   }
 }
+
+/* Index-page rhythm refinements. The section classes come from the local
+   base layout so Research and the accepted detail-page layouts remain out of
+   scope. */
+.academic-main--projects .page-body > .max-w-prose > article.prose > h2 {
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+.academic-main--projects .page-body > .max-w-prose > article.prose > h2:first-of-type {
+  margin-top: 24px;
+}
+
+.academic-main--projects .page-body > .max-w-prose > article.prose > h3 {
+  margin: 0;
+  padding: 17px 0 0;
+  border-top: 1px solid var(--academic-border);
+}
+
+.academic-main--projects .page-body > .max-w-prose > article.prose > h2 + h3 {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.academic-main--projects .page-body > .max-w-prose > article.prose > h3 + p {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.academic-main--projects .page-body > .max-w-prose > article.prose > h3 + p + p {
+  margin-top: 8px;
+  margin-bottom: 17px;
+}
+
+.academic-main--publications .page-body > .max-w-prose > article.prose > h3 {
+  margin: 0;
+  padding: 20px 0 0;
+  border-top: 1px solid var(--academic-border);
+}
+
+.academic-main--publications .page-body > .max-w-prose > article.prose > h2 + h3 {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.academic-main--publications .page-body > .max-w-prose > article.prose > h3 + p {
+  margin-top: 6px;
+  margin-bottom: 8px;
+}
+
+.academic-main--publications .page-body > .max-w-prose > article.prose > h3 + p + p {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.academic-main--publications .page-body > .max-w-prose > article.prose > h3 + p + p + p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.academic-main--cv .page-body > .max-w-prose > article.prose > h3 {
+  margin-top: 30px;
+}
+
+.academic-main--cv .page-body > .max-w-prose > article.prose > h2 + h3 {
+  margin-top: 20px;
+}
+
+@media (max-width: 767px) {
+  .academic-main--projects .page-body > .max-w-prose > article.prose > h2 {
+    margin-top: 24px;
+  }
+
+  .academic-main--projects .page-body > .max-w-prose > article.prose > h3,
+  .academic-main--publications .page-body > .max-w-prose > article.prose > h3 {
+    padding-top: 16px;
+  }
+
+  .academic-main--projects .page-body > .max-w-prose > article.prose > h2 + h3,
+  .academic-main--publications .page-body > .max-w-prose > article.prose > h2 + h3 {
+    padding-top: 0;
+  }
+
+  .academic-main--cv .page-body > .max-w-prose > article.prose > h3 {
+    margin-top: 28px;
+  }
+
+  .academic-main--cv .page-body > .max-w-prose > article.prose > h2 + h3 {
+    margin-top: 18px;
+  }
+}

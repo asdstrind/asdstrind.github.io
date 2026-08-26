@@ -4,6 +4,8 @@ title: "项目"
 
 以下项目按与电池智能、数据高效学习和面向部署的机器学习的相关性排列。
 
+## 科研项目
+
 ### Battery Dataset Processing and Infrastructure
 
 **时间：** 03/2026–04/2026 · **导师：** Xiang Li  
@@ -24,6 +26,8 @@ title: "项目"
 **时间：** 09/2024–12/2025 · **导师：** Xiang Li  
 研究少样本目标域标签下的跨域 SOH 预测，并评估 BMS 部署所需的精度、参数量、FLOPs 和推理延迟。[查看完整记录](edge-soh-deployment/)
 
+## 竞赛经历
+
 ### Optimization of Smoke Jamming Projectile Launch Strategy Based on a Coupled Multi-Algorithm Framework
 
 **竞赛：** 2025 China Undergraduate Mathematical Contest in Modeling (CUMCM), Problem B  
@@ -35,6 +39,8 @@ title: "项目"
 **竞赛：** 2025 Mathematical Contest In Modeling/Interdisciplinary Contest In Modeling (MCM/ICM), Problem E  
 **时间：** 01/2025 · **结果：** Meritorious Winner（证书已提供）  
 参与多物种 reaction-diffusion modeling、sensitivity analysis、MATLAB simulation、visualization 和 LaTeX 排版。[查看完整记录](mcm-icm-green-agriculture/)
+
+## 工业实践
 
 ### Single-Template Retrieval-Based Wheel Hub Recognition at Geely Automobile Xi’an Manufacturing Base
 
