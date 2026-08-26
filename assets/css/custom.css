@@ -814,6 +814,20 @@ body {
   font-size: 0.86rem;
 }
 
+.academic-detail__visual {
+  width: 100%;
+  max-width: 960px;
+  margin: 30px 0 38px;
+}
+
+.academic-detail__visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--academic-border);
+  background: #ffffff;
+}
+
 .academic-detail__section {
   margin-top: 32px;
 }
@@ -959,6 +973,11 @@ body {
 
   .academic-detail__meta-row dd {
     font-size: 0.92rem;
+  }
+
+  .academic-detail__visual {
+    margin-top: 24px;
+    margin-bottom: 30px;
   }
 
   .academic-detail__section {

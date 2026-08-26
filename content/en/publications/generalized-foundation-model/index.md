@@ -9,6 +9,7 @@ authors:
 publication: "Journal of Energy Storage 150 (2026): 120566"
 year: "2026"
 status: "Published"
+publication_image: "/images/publications/generalized-foundation-model-preview.png"
 abstract: >-
   This paper proposes a generalized foundation model for few-shot lithium-ion battery State-of-Health estimation using data from multiple source domains. Maximum Mean Discrepancy reduces feature-distribution gaps, while a ResNet–Transformer hybrid with a Kolmogorov–Arnold Network improves nonlinear representation. Voltage, current, and time data are used to learn transferable degradation knowledge for robust target-domain prediction.
 build:

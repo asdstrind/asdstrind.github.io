@@ -11,6 +11,7 @@ authors:
 publication: "Journal of Energy Storage 177 (2026): 123418"
 year: "2026"
 status: "Published"
+publication_image: "/images/publications/multimodal-foundation-model-preview.png"
 abstract: >-
   This paper proposes a large multimodal foundation model for unified SOH and RUL estimation under heterogeneous battery materials, duty cycles, and working conditions. The pipeline combines heterogeneous-data preprocessing, parameter-efficient fine-tuning, generalized degradation-feature extraction, and a joint SOH/RUL estimation scheme. On unseen batteries, the reported MAE is 0.0195 for SOH and 0.0961 for RUL, with anomaly detection used to identify early degradation signs.
 build:

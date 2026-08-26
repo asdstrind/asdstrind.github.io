@@ -34,6 +34,12 @@
     {{ end }}
   </dl>
 
+  {{ with .Params.publication_image }}
+    <section class="academic-detail__visual" aria-label="{{ if $isZh }}论文视觉预览{{ else }}Publication visual preview{{ end }}">
+      <img src="{{ . | relURL }}" alt="{{ if $isZh }}已发表论文视觉预览：{{ $.Title }}{{ else }}Published paper visual preview: {{ $.Title }}{{ end }}" loading="eager" decoding="async">
+    </section>
+  {{ end }}
+
   {{ with .Params.abstract }}
     <section class="academic-detail__section">
       <h2>{{ if $isZh }}摘要{{ else }}Abstract{{ end }}</h2>
