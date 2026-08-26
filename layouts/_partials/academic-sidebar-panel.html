@@ -1,0 +1,46 @@
+{{- $current := .RelPermalink -}}
+{{- $homeURL := "/" | relLangURL -}}
+{{- $cvURL := "/cv/" | relLangURL -}}
+{{- $researchURL := "/research/" | relLangURL -}}
+{{- $publicationsURL := "/publications/" | relLangURL -}}
+{{- $projectsURL := "/projects/" | relLangURL -}}
+{{- $external := site.Params.externalLinks | default dict -}}
+{{- $isZh := eq .Lang "zh" -}}
+<div class="academic-sidebar__panel">
+  <div class="academic-sidebar__identity">
+    <a class="academic-sidebar__name" href="{{ $homeURL }}">Zihan Gong</a>
+    <p class="academic-sidebar__role">{{ if $isZh }}本科生研究者{{ else }}Undergraduate Researcher{{ end }}</p>
+  </div>
+
+  <nav class="academic-sidebar__nav" aria-label="{{ if $isZh }}主导航{{ else }}Primary navigation{{ end }}">
+    <a class="academic-sidebar__link{{ if .IsHome }} is-active{{ end }}" href="{{ $homeURL }}">{{ if $isZh }}首页{{ else }}Home{{ end }}</a>
+    <a class="academic-sidebar__link{{ if eq $current $researchURL }} is-active{{ end }}" href="{{ $researchURL }}">{{ if $isZh }}研究{{ else }}Research{{ end }}</a>
+    <a class="academic-sidebar__link{{ if eq $current $publicationsURL }} is-active{{ end }}" href="{{ $publicationsURL }}">{{ if $isZh }}论文{{ else }}Publications{{ end }}</a>
+    <a class="academic-sidebar__link{{ if eq $current $projectsURL }} is-active{{ end }}" href="{{ $projectsURL }}">{{ if $isZh }}项目{{ else }}Projects{{ end }}</a>
+    <a class="academic-sidebar__link{{ if eq $current $cvURL }} is-active{{ end }}" href="{{ $cvURL }}">{{ if $isZh }}简历{{ else }}CV{{ end }}</a>
+
+    {{ if $external.github }}
+      <a class="academic-sidebar__link" href="{{ $external.github | safeURL }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+    {{ else }}
+      <span class="academic-sidebar__link is-disabled" aria-disabled="true">GitHub</span>
+    {{ end }}
+    {{ if $external.huggingFace }}
+      <a class="academic-sidebar__link" href="{{ $external.huggingFace | safeURL }}" target="_blank" rel="noopener noreferrer">Hugging Face</a>
+    {{ else }}
+      <span class="academic-sidebar__link is-disabled" aria-disabled="true">Hugging Face</span>
+    {{ end }}
+    {{ if $external.email }}
+      <a class="academic-sidebar__link" href="mailto:{{ $external.email }}">Email</a>
+    {{ else }}
+      <span class="academic-sidebar__link is-disabled" aria-disabled="true">Email</span>
+    {{ end }}
+  </nav>
+
+  <div class="academic-sidebar__language" aria-label="{{ if $isZh }}语言切换{{ else }}Language switcher{{ end }}">
+    <a class="academic-sidebar__language-link is-active" href="{{ .RelPermalink }}">{{ if eq .Lang "en" }}EN{{ else }}中文{{ end }}</a>
+    {{ range .Translations }}
+      <span class="academic-sidebar__language-divider">|</span>
+      <a class="academic-sidebar__language-link" href="{{ .RelPermalink }}">{{ if eq .Lang "en" }}EN{{ else }}中文{{ end }}</a>
+    {{ end }}
+  </div>
+</div>

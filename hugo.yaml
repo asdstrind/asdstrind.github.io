@@ -1,0 +1,95 @@
+baseURL: "https://asdstrind.github.io/"
+title: "Academic Homepage"
+locale: "en-us"
+defaultContentLanguage: "en"
+defaultContentLanguageInSubdir: false
+hasCJKLanguage: true
+enableRobotsTXT: true
+enableGitInfo: false
+theme: "hugo-blox-builder"
+
+languages:
+  en:
+    label: "English"
+    locale: "en-us"
+    weight: 1
+    contentDir: "content/en"
+    menus:
+      main:
+        - name: "Home"
+          pageRef: "/"
+          weight: 10
+        - name: "Research"
+          pageRef: "/research"
+          weight: 20
+        - name: "CV"
+          pageRef: "/cv"
+          weight: 30
+        - name: "Publications"
+          pageRef: "/publications"
+          weight: 40
+        - name: "Projects"
+          pageRef: "/projects"
+          weight: 50
+  zh:
+    label: "中文"
+    locale: "zh-Hans"
+    weight: 2
+    contentDir: "content/zh"
+    menus:
+      main:
+        - name: "首页"
+          pageRef: "/"
+          weight: 10
+        - name: "研究"
+          pageRef: "/research"
+          weight: 20
+        - name: "简历"
+          pageRef: "/cv"
+          weight: 30
+        - name: "论文"
+          pageRef: "/publications"
+          weight: 40
+        - name: "项目"
+          pageRef: "/projects"
+          weight: 50
+
+params:
+  hugoblox:
+    schema: "2.0"
+    identity:
+      name: "Zihan Gong"
+      organization: ""
+      type: "person"
+      tagline: "Undergraduate Researcher"
+      description: "Research on data-efficient and generalizable machine learning for battery systems."
+      social: {}
+    header:
+      enable: false
+      language_switcher: true
+    footer:
+      language_switcher: true
+    analytics: {}
+    verification: {}
+    repository:
+      enable: false
+      url: ""
+    comments:
+      enable: false
+    search:
+      enable: false
+  metadata:
+    author: "Zihan Gong"
+    description: "Academic homepage of Zihan Gong, an undergraduate researcher in Intelligent Manufacturing Engineering at Xi’an Jiaotong University."
+  externalLinks:
+    github: "https://github.com/asdstrind?tab=repositories"
+    huggingFace: "https://huggingface.co/coinlearner"
+    email: "ZHGong_XJTU@163.com"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+minify:
+  minifyOutput: true

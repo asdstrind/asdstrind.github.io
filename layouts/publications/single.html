@@ -1,0 +1,69 @@
+{{ define "main" }}
+{{- $isZh := eq .Lang "zh" -}}
+{{- $publicationsURL := "/publications/" | relLangURL -}}
+<article class="academic-detail academic-detail--publication" data-pagefind-body>
+  <header class="academic-detail__header">
+    <p class="academic-detail__eyebrow">{{ if $isZh }}论文{{ else }}Publication{{ end }}</p>
+    <h1 class="academic-detail__title" data-pagefind-meta="title">{{ .Title }}</h1>
+  </header>
+
+  <dl class="academic-detail__meta">
+    {{ with .Params.authors }}
+      <div class="academic-detail__meta-row">
+        <dt>{{ if $isZh }}作者{{ else }}Authors{{ end }}</dt>
+        <dd>{{ delimit . ", " }}</dd>
+      </div>
+    {{ end }}
+    {{ with .Params.publication }}
+      <div class="academic-detail__meta-row">
+        <dt>{{ if $isZh }}发表载体{{ else }}Venue{{ end }}</dt>
+        <dd>{{ . | markdownify }}</dd>
+      </div>
+    {{ end }}
+    {{ with .Params.year }}
+      <div class="academic-detail__meta-row">
+        <dt>{{ if $isZh }}年份{{ else }}Year{{ end }}</dt>
+        <dd>{{ . }}</dd>
+      </div>
+    {{ end }}
+    {{ with .Params.status }}
+      <div class="academic-detail__meta-row">
+        <dt>{{ if $isZh }}状态{{ else }}Status{{ end }}</dt>
+        <dd><span class="academic-detail__status">{{ if $isZh }}{{ if eq . "Published" }}已发表{{ else if eq . "Under review" }}审稿中{{ else }}{{ . | markdownify }}{{ end }}{{ else }}{{ . | markdownify }}{{ end }}</span></dd>
+      </div>
+    {{ end }}
+  </dl>
+
+  {{ with .Params.abstract }}
+    <section class="academic-detail__section">
+      <h2>{{ if $isZh }}摘要{{ else }}Abstract{{ end }}</h2>
+      <div class="academic-detail__summary">{{ . | markdownify }}</div>
+    </section>
+  {{ end }}
+
+  <section class="academic-detail__section">
+    <h2>{{ if $isZh }}研究亮点{{ else }}Research highlights{{ end }}</h2>
+    {{ if .Content }}
+      <div class="academic-detail__content">{{ .Content }}</div>
+    {{ else }}
+      <p class="academic-detail__placeholder">{{ if $isZh }}暂未提供研究亮点。{{ else }}Research highlights have not been provided yet.{{ end }}</p>
+    {{ end }}
+  </section>
+
+  <section class="academic-detail__section academic-detail__section--links">
+    <h2>{{ if $isZh }}链接{{ else }}Links{{ end }}</h2>
+    <div class="academic-detail__links">
+      {{ with .Params.link_placeholders.pdf }}
+        <span class="academic-detail__link-item"><strong>PDF</strong><span>{{ . }}</span></span>
+      {{ end }}
+      {{ with .Params.link_placeholders.code }}
+        <span class="academic-detail__link-item"><strong>Code</strong><span>{{ . }}</span></span>
+      {{ end }}
+      {{ with .Params.link_placeholders.bibtex }}
+        <span class="academic-detail__link-item"><strong>BibTeX</strong><span>{{ . }}</span></span>
+      {{ end }}
+      <a class="academic-detail__back-link" href="{{ $publicationsURL }}">← {{ if $isZh }}返回论文列表{{ else }}Back to publications{{ end }}</a>
+    </div>
+  </section>
+</article>
+{{ end }}

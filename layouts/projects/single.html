@@ -1,0 +1,74 @@
+{{ define "main" }}
+{{- $isZh := eq .Lang "zh" -}}
+{{- $projectsURL := "/projects/" | relLangURL -}}
+<article class="academic-detail academic-detail--project" data-pagefind-body>
+  <header class="academic-detail__header">
+    <p class="academic-detail__eyebrow">{{ if $isZh }}项目{{ else }}Project{{ end }}</p>
+    <h1 class="academic-detail__title" data-pagefind-meta="title">{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="academic-detail__lede">{{ . | markdownify }}</p>{{ end }}
+  </header>
+
+  <dl class="academic-detail__meta">
+    {{ with .Params.period }}
+      <div class="academic-detail__meta-row">
+        <dt>{{ if $isZh }}时间{{ else }}Period{{ end }}</dt>
+        <dd>{{ . }}</dd>
+      </div>
+    {{ end }}
+    {{ with .Params.advisor }}
+      <div class="academic-detail__meta-row">
+        <dt>{{ if $isZh }}导师{{ else }}Advisor{{ end }}</dt>
+        <dd>{{ . }}</dd>
+      </div>
+    {{ end }}
+    {{ with .Params.organization }}
+      <div class="academic-detail__meta-row">
+        <dt>{{ if $isZh }}组织{{ else }}Organization{{ end }}</dt>
+        <dd>{{ . }}</dd>
+      </div>
+    {{ end }}
+    {{ with .Params.competition }}
+      <div class="academic-detail__meta-row">
+        <dt>{{ if $isZh }}竞赛{{ else }}Competition{{ end }}</dt>
+        <dd>{{ . }}</dd>
+      </div>
+    {{ end }}
+    {{ with .Params.outcome }}
+      <div class="academic-detail__meta-row">
+        <dt>{{ if $isZh }}结果{{ else }}Outcome{{ end }}</dt>
+        <dd><span class="academic-detail__status">{{ . }}</span></dd>
+      </div>
+    {{ end }}
+  </dl>
+
+  <section class="academic-detail__section">
+    <h2>{{ if $isZh }}项目详情{{ else }}Project details{{ end }}</h2>
+    {{ if .Content }}
+      <div class="academic-detail__content">{{ .Content }}</div>
+    {{ else }}
+      {{ with .Params.description }}
+        <h3>{{ if $isZh }}描述{{ else }}Description{{ end }}</h3>
+        <p>{{ . | markdownify }}</p>
+      {{ end }}
+      {{ with .Params.methods }}
+        <h3>{{ if $isZh }}方法{{ else }}Methods{{ end }}</h3>
+        <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+      {{ end }}
+      {{ with .Params.outcomes }}
+        <h3>{{ if $isZh }}结果{{ else }}Results / outcomes{{ end }}</h3>
+        <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+      {{ end }}
+    {{ end }}
+  </section>
+
+  <section class="academic-detail__section academic-detail__section--links">
+    <h2>{{ if $isZh }}链接{{ else }}Links{{ end }}</h2>
+    <div class="academic-detail__links">
+      {{ with .Params.links }}
+        {{ range . }}<a class="academic-detail__back-link" href="{{ .url | safeURL }}">{{ .title }}</a>{{ end }}
+      {{ end }}
+      <a class="academic-detail__back-link" href="{{ $projectsURL }}">← {{ if $isZh }}返回项目列表{{ else }}Back to projects{{ end }}</a>
+    </div>
+  </section>
+</article>
+{{ end }}

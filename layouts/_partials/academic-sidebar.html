@@ -1,0 +1,16 @@
+<aside class="academic-sidebar" aria-label="{{ if eq .Lang "zh" }}学术主页侧边栏{{ else }}Academic homepage sidebar{{ end }}">
+  <div class="academic-sidebar__desktop-panel">
+    {{ partial "academic-sidebar-panel" . }}
+  </div>
+
+  <details class="academic-sidebar__mobile-details">
+    <summary class="academic-sidebar__summary">
+      <span>
+        <strong class="academic-sidebar__mobile-name">Zihan Gong</strong>
+        <span class="academic-sidebar__mobile-role">{{ if eq .Lang "zh" }}本科生研究者{{ else }}Undergraduate Researcher{{ end }}</span>
+      </span>
+      <span class="academic-sidebar__menu-label">{{ if eq .Lang "zh" }}菜单{{ else }}Menu{{ end }}</span>
+    </summary>
+    {{ partial "academic-sidebar-panel" . }}
+  </details>
+</aside>

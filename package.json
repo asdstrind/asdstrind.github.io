@@ -1,0 +1,10 @@
+{
+  "name": "academic-homepage",
+  "private": true,
+  "description": "Local build dependencies for the Hugo academic homepage.",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.7",
+    "@tailwindcss/typography": "^0.5.16",
+    "tailwindcss": "^4.1.7"
+  }
+}

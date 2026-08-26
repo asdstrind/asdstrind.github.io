@@ -1,0 +1,25 @@
+/.cache/
+/.npm-cache/
+/.tools/
+/node_modules/
+/public/
+/resources/
+/.hugo_build.lock
+
+# Temporary and log files
+*.tmp
+*.log
+
+# Private research, competition, and manuscript materials
+/论文与竞赛资料/
+
+# Local CV source copies; the intentionally public CV is under static/files/
+/CV - Zihan Gong_revised.docx
+/CV - Zihan Gong_revised.pdf
+!/static/files/cv-zihan-gong-revised.pdf
+
+# Local design/specification references and source image
+/参考图片.png
+/Academic Homepage Visual Specification Document v1.0.md
+/Academic Homepage Website Specification Document v1.1.md
+/Hugo Implementation Specification Document v1.0.md
