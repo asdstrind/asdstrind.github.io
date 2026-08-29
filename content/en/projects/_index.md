@@ -21,10 +21,10 @@ Contributed the multi-source battery data preprocessing and standardization pipe
 **Period:** 02/2026–Present · **Advisor:** Xiang Li · **Status:** Under review  
 Developed a learnable prototype-generation pipeline that targets SOH semantics, feature distributions, and degradation-sequence structure under data compression. [View full record](prototype-distillation/)
 
-### Edge-Constrained Generalized SOH Estimation
+### Jetson-Based Edge Battery SOH Deployment
 
-**Period:** 09/2024–12/2025 · **Advisor:** Xiang Li  
-Studied cross-domain SOH prediction with few-shot target labels and evaluated accuracy, parameter count, FLOPs, and inference latency for BMS deployment. [View full record](edge-soh-deployment/)
+**Period:** 08/2026–Present · **Advisor:** Xiang Li
+Building an end-to-end edge pipeline for real battery measurements, ADS1115 acquisition, preprocessing, reproducible experiment storage, and Jetson-side SOH inference; deployment and reference-SOH validation remain ongoing. [View full record](edge-soh-deployment/)
 
 ## Competitions
 

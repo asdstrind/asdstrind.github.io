@@ -80,7 +80,7 @@ This structured page complements the downloadable PDF CV and does not replace it
 - [Battery Dataset Processing and Infrastructure](../projects/battery-dataset-processing/) — 03/2026–04/2026; Python-based multi-source battery data processing and unified storage.
 - [Multimodal Foundation Model Data and Evaluation](../projects/multimodal-foundation-model/) — 03/2026–04/2026; data infrastructure for unified SOH/RUL estimation.
 - [Task-Guided Prototype Distillation](../projects/prototype-distillation/) — 02/2026–Present; under review.
-- [Edge-Constrained Generalized SOH Estimation](../projects/edge-soh-deployment/) — 09/2024–12/2025; cross-domain SOH estimation for BMS constraints.
+- [Jetson-Based Edge Battery SOH Deployment](../projects/edge-soh-deployment/) — 08/2026–Present; real-battery acquisition, preprocessing, experiment storage, and Jetson-side SOH inference.
 - [Optimization of Smoke Jamming Projectile Launch Strategy Based on a Coupled Multi-Algorithm Framework](../projects/cumcm-smoke-jamming-optimization/) — CUMCM Problem B, 09/2025; First Prize, China Undergraduate Mathematical Contest in Modeling (CUMCM), Shaanxi Division, 2025.
 - [Green Agriculture: Future or Not?](../projects/mcm-icm-green-agriculture/) — MCM/ICM Problem E, 01/2025; Meritorious Winner (certificate supplied).
 - [Single-Template Retrieval-Based Wheel Hub Recognition at Geely Automobile Xi’an Manufacturing Base](../projects/geely-wheel-hub-recognition/) — internship project, 07/2026.

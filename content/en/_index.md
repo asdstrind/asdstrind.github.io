@@ -45,8 +45,8 @@ sections:
         <p>Building data and modeling infrastructure for multimodal foundation models that unify SOH and RUL estimation across multiple battery domains and support early degradation detection.</p>
         </article>
         <article class="research-grid__item">
-        <h3>Edge Intelligence for Battery Management Systems</h3>
-        <p>Evaluating lightweight architectures with BMS-relevant parameter counts, FLOPs, and inference latency so that cross-domain accuracy is considered together with deployment feasibility.</p>
+        <h3>Jetson-Based Edge Battery SOH Deployment</h3>
+        <p>Building an independent edge pipeline that connects real battery measurements to acquisition, preprocessing, reproducible experiment storage, and Jetson-side SOH inference; closed-loop deployment and validation remain ongoing.</p>
         </article>
         </div>
   - block: markdown
@@ -90,9 +90,9 @@ sections:
         <p>Developed a structure-preserving prototype-generation pipeline for regression on battery aging sequences. <a href="projects/prototype-distillation/">View project record</a></p>
         </article>
         <article class="academic-list__item">
-        <h3>Generalizable Cross-Domain Battery SOH Estimation</h3>
-        <p class="academic-list__meta">09/2024–12/2025 · Advisor: Xiang Li</p>
-        <p>Studied transferable degradation representations for cross-domain SOH prediction with few-shot target labels and BMS-aware efficiency evaluation. <a href="projects/edge-soh-deployment/">View project record</a></p>
+        <h3>Jetson-Based Edge Battery SOH Deployment</h3>
+        <p class="academic-list__meta">08/2026–Present · Advisor: Xiang Li</p>
+        <p>Building an end-to-end edge pipeline for real battery acquisition, preprocessing, reproducible experiment storage, and Jetson-side SOH inference; deployment and reference-SOH validation remain ongoing. <a href="projects/edge-soh-deployment/">View project record</a></p>
         </article>
         <article class="academic-list__item">
         <h3>Battery Dataset Processing and Infrastructure</h3>

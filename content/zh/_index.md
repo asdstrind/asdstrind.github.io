@@ -46,8 +46,8 @@ sections:
         <p>构建多模态基础模型所需的数据与建模基础设施，支持多个电池域上的 SOH/RUL 联合估计与早期退化检测。</p>
         </article>
         <article class="research-grid__item">
-        <h3>电池管理系统边缘智能</h3>
-        <p>使用参数量、FLOPs 和推理延迟等 BMS 相关指标评估轻量化架构，将跨域精度与部署可行性一并考虑。</p>
+        <h3>基于 Jetson 的电池 SOH 边缘部署系统</h3>
+        <p>构建独立的边缘流程，将真实电池测量连接至信号采集、预处理、可复现实验数据存储和 Jetson 侧 SOH 推理；闭环部署与验证仍在进行中。</p>
         </article>
         </div>
   - block: markdown
@@ -91,9 +91,9 @@ sections:
         <p>建立面向电池老化序列回归的结构保持原型生成流程。<a href="projects/prototype-distillation/">查看项目记录</a></p>
         </article>
         <article class="academic-list__item">
-        <h3>Generalizable Cross-Domain Battery SOH Estimation</h3>
-        <p class="academic-list__meta">09/2024–12/2025 · 导师：Xiang Li</p>
-        <p>研究有限目标域标签下的可迁移退化表示与跨域 SOH 预测，并进行 BMS 感知的效率评估。<a href="projects/edge-soh-deployment/">查看项目记录</a></p>
+        <h3>基于 Jetson 的电池 SOH 边缘部署系统</h3>
+        <p class="academic-list__meta">08/2026–Present · 导师：Xiang Li</p>
+        <p>构建面向真实电池测量的端到端边缘流程，覆盖数据采集、预处理、可复现实验数据存储和 Jetson 侧 SOH 推理；部署与参考 SOH 验证仍在进行中。<a href="projects/edge-soh-deployment/">查看项目记录</a></p>
         </article>
         <article class="academic-list__item">
         <h3>Battery Dataset Processing and Infrastructure</h3>

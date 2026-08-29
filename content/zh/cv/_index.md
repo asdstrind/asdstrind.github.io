@@ -80,7 +80,7 @@ title: "简历"
 - [Battery Dataset Processing and Infrastructure](../projects/battery-dataset-processing/) — 03/2026–04/2026；多源 battery data processing 和统一存储。
 - [Multimodal Foundation Model Data and Evaluation](../projects/multimodal-foundation-model/) — 03/2026–04/2026；负责多源电池数据预处理、标准化与统一存储流程，为后续多模态模型训练与评估提供数据基础设施支持。
 - [Task-Guided Prototype Distillation](../projects/prototype-distillation/) — 02/2026–Present；审稿中。
-- [Edge-Constrained Generalized SOH Estimation](../projects/edge-soh-deployment/) — 09/2024–12/2025；面向 BMS constraints 的 cross-domain SOH estimation。
+- [基于 Jetson 的电池 SOH 边缘部署系统](../projects/edge-soh-deployment/) — 08/2026–Present；真实电池采集、预处理、实验数据存储与 Jetson 侧 SOH 推理。
 - [Optimization of Smoke Jamming Projectile Launch Strategy Based on a Coupled Multi-Algorithm Framework](../projects/cumcm-smoke-jamming-optimization/) — CUMCM Problem B，09/2025；2025年全国大学生数学建模竞赛陕西赛区本科组一等奖。
 - [Green Agriculture: Future or Not?](../projects/mcm-icm-green-agriculture/) — MCM/ICM Problem E，01/2025；Meritorious Winner（证书已提供）。
 - [Single-Template Retrieval-Based Wheel Hub Recognition at Geely Automobile Xi’an Manufacturing Base](../projects/geely-wheel-hub-recognition/) — 实习项目，07/2026。

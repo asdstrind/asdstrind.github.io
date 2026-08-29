@@ -21,10 +21,10 @@ title: "项目"
 **时间：** 02/2026–Present · **导师：** Xiang Li · **状态：** 审稿中  
 建立可学习的 prototype-generation pipeline，在数据压缩下关注 SOH 语义、特征分布和退化序列结构。[查看完整记录](prototype-distillation/)
 
-### Edge-Constrained Generalized SOH Estimation
+### 基于 Jetson 的电池 SOH 边缘部署系统
 
-**时间：** 09/2024–12/2025 · **导师：** Xiang Li  
-研究少样本目标域标签下的跨域 SOH 预测，并评估 BMS 部署所需的精度、参数量、FLOPs 和推理延迟。[查看完整记录](edge-soh-deployment/)
+**时间：** 08/2026–Present · **导师：** Xiang Li
+构建面向真实电池测量的端到端边缘流程，覆盖 ADS1115 数据采集、预处理、可复现实验数据存储和 Jetson 侧 SOH 推理；部署与参考 SOH 验证仍在进行中。[查看完整记录](edge-soh-deployment/)
 
 ## 竞赛经历
 

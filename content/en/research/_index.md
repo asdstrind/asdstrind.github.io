@@ -28,10 +28,14 @@ This project established a reproducible interface for heterogeneous battery data
 
 This work treats data prototypes as learnable variables rather than selected real samples. SOH anchors and Huber regression loss preserve label semantics; MMD aligns feature distributions; similarity constraints and 2D total variation regularization address signal drift and local artifacts. Voltage and current prototypes, paired with a fixed temporal channel t, are transformed into GAF representations and passed through a fixed ResNet-2D network; the joint objective is back-propagated through this path to optimize only the prototype V and I variables. The fixed t channel remains a temporal conditioning/indexing variable, while SOH estimation is handled separately by the CNN–Transformer–KAN predictor. No manuscript or private research assets are exposed on this site.
 
-## Edge Intelligence for Battery Management Systems
+## Jetson-Based Edge Battery SOH Deployment
 
-**Topic:** Resource-aware SOH estimation for BMS deployment  
+**Topic:** Independent edge-computing and deployment pipeline for battery SOH
 **Advisor:** Xiang Li  
-**Period:** 09/2024–12/2025
+**Period:** 08/2026–Present
 
-Deployment feasibility is treated as part of model evaluation rather than an afterthought. The reported generalized SOH model combines cross-domain accuracy with 8.37M parameters, 23.11 MMac FLOPs, and 8.9 ms inference time in the reported setup. This line of work motivates future research on compact, robust, and interpretable battery intelligence at the edge.
+This is an independent engineering project, separate from the published generalized foundation-model paper. It is intended to connect real battery and laboratory experimental measurements with an edge SOH pipeline rather than reuse that paper's public-dataset experimental setup.
+
+The pipeline covers ADS1115/I2C signal acquisition, raw-measurement preservation, preprocessing and construction of synchronized 3×256 cycle inputs whose channels are voltage, current, and time, Jetson-side inference, and comparison of SOH output with experimental/reference SOH. Reproducible experiment and replay storage includes processed artifacts, sample identity, stable replay ordering, provenance, interruption/recovery handling, and integrity validation. ADS1115 detection and sustained-read validation have been completed, while the end-to-end pipeline continues to be developed.
+
+The existing generalized SOH model is currently used as an initial inference model for validating the edge deployment pipeline. Hardware communication, acquisition validation, and core storage/replay infrastructure have progressed substantially, while complete real-battery closed-loop deployment and experimental validation remain ongoing.
