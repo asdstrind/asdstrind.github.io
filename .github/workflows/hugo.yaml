@@ -29,14 +29,6 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Checkout production baseline for preview
-        if: github.ref_name == 'visual_revise'
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          path: _main-site
-          submodules: recursive
-
       - name: Configure GitHub Pages
         id: pages
         uses: actions/configure-pages@v5
@@ -50,11 +42,6 @@ jobs:
 
       - name: Install Node.js dependencies
         if: hashFiles('package-lock.json') != ''
-        run: npm ci
-
-      - name: Install production baseline dependencies
-        if: github.ref_name == 'visual_revise' && hashFiles('_main-site/package-lock.json') != ''
-        working-directory: _main-site
         run: npm ci
 
       - name: Install Hugo Extended
@@ -75,25 +62,7 @@ jobs:
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
-        shell: bash
-        run: |
-          set -euo pipefail
-          if [[ "${GITHUB_REF_NAME}" == "visual_revise" ]]; then
-            site_base="${{ steps.pages.outputs.base_url }}"
-            site_base="${site_base%/}"
-            hugo --gc --minify \
-              --source ./_main-site \
-              --destination "$RUNNER_TEMP/main-public" \
-              --baseURL "${site_base}/"
-            hugo --gc --minify \
-              --destination "$RUNNER_TEMP/preview-public" \
-              --baseURL "${site_base}/visual_revise/"
-            mkdir -p ./public/visual_revise
-            cp -a "$RUNNER_TEMP/main-public/." ./public/
-            cp -a "$RUNNER_TEMP/preview-public/." ./public/visual_revise/
-          else
-            hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}"
-          fi
+        run: hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
