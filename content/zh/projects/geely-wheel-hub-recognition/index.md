@@ -2,35 +2,35 @@
 title: "Single-Template Retrieval-Based Wheel Hub Recognition at Geely Automobile Xi’an Manufacturing Base"
 translationKey: "project-geely-wheel-hub-recognition"
 period: "07/2026"
-organization: "IT R&D Department of Geely Automobile Xi’an Manufacturing Base, Xi’an, China"
-description: "IT R&D 实习期间参与的 single-template retrieval-based wheel hub recognition 方案实现与验证。"
+organization: "吉利汽车西安制造基地 IT 研发部门"
+description: "在吉利汽车 IT 研发实习中，参与基于单模板检索的轮毂识别与评估。"
 methods:
   - "WheelPrint"
-  - "RSM-HOG feature fusion"
-  - "Rejection mechanism"
+  - "RSM-HOG 特征融合"
+  - "拒识机制"
   - "Python"
   - "NumPy"
   - "scikit-image"
   - "pandas"
 outcomes:
-  - "开发集 Top-1 accuracy：97.62%"
-  - "启用 rejection 后接受样本 accuracy：100%"
-  - "接受样本 coverage：79.76%"
-  - "CPU 单图 median latency：226 ms"
+  - "开发集 Top-1 准确率：97.62%"
+  - "启用拒识后接受样本准确率：100%"
+  - "接受样本覆盖率：79.76%"
+  - "CPU 单图推理延迟中位数：226 ms"
 build:
   list: never
 ---
 
-## 描述
+## 项目简介
 
-参与 single-template retrieval-based wheel hub recognition 方案的实现与验证，并检查 Python preprocessing、descriptor extraction、recognition 和 evaluation 模块。
+在吉利汽车西安制造基地实习期间，参与基于单模板检索的轮毂识别方案，检查 Python 数据预处理、特征提取、识别与评估模块。
 
 ## 方法
 
-- 使用 WheelPrint 与 RSM-HOG feature-fusion pipeline 及其 rejection mechanism。
-- 编写覆盖 design、testing、diagnosis 和 improvement 的技术文档。
-- 参与实验数据验证，并总结强光反射导致的 misclassification cases。
+- 融合 WheelPrint 与 RSM-HOG 特征，并通过拒识机制处理低置信度样本。
+- 编写涵盖方案设计、测试、问题诊断与改进的技术文档。
+- 参与实验数据验证，分析强光反射引起的误分类。
 
-## 结果
+## 实验结果
 
-特征融合方案在开发集上的 Top-1 accuracy 为 97.62%。启用 rejection 后，接受样本 accuracy 为 100%，coverage 为 79.76%，CPU 单图 median latency 为 226 ms。
+开发集上的 Top-1 准确率为 97.62%。启用拒识后，接受样本的准确率为 100%，覆盖率为 79.76%；CPU 单图推理延迟中位数为 226 ms。

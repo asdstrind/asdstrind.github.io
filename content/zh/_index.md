@@ -9,23 +9,23 @@ sections:
       text: |
         **Zihan Gong**
 
-        **西安交通大学本科生研究者**
+        **西安交通大学 · 本科生**
 
         智能制造工程 · 钱学森班（自动化方向）
 
-        Zihan Gong 是西安交通大学钱学森班智能制造工程本科生研究者，研究关注异构运行条件下支持电池健康管理的数据高效与可泛化机器学习。他的工作涉及锂离子电池 State-of-Health (SOH) 估计、跨域表示学习、数据集与原型蒸馏，以及用于 SOH 和 Remaining Useful Life (RUL) 联合预测的多模态基础模型。技术工作包括 Python/PyTorch 数据流程、基于 Maximum Mean Discrepancy (MMD) 的分布对齐、轻量化 CNN–Transformer–KAN 建模、可学习原型，以及围绕参数量、FLOPs 和推理延迟的部署评估。当前工作聚焦于面向能源系统与电池管理的可靠、可迁移且资源高效的智能方法。
+        我是西安交通大学钱学森班智能制造工程本科生，主要研究用于电池健康管理的数据高效学习与跨域泛化方法。研究涵盖锂离子电池健康状态（SOH）估计、跨域表示学习、数据集与原型蒸馏，以及联合预测 SOH 和剩余使用寿命（RUL）的多模态基础模型。我使用 Python/PyTorch 构建数据流程，通过最大均值差异（MMD）对齐特征分布，并结合轻量化 CNN–Transformer–KAN 和可学习原型开展建模，同时评估模型参数量、计算量与推理延迟。
 
   - block: markdown
     id: research-interests
     content:
       title: "研究方向"
       text: |
-        - 电池 State-of-Health (SOH) 估计
+        - 电池健康状态（SOH）估计
         - 跨域泛化与域适应
-        - 数据高效学习与 Few-Shot Transfer
+        - 数据高效学习与少样本迁移
         - 数据集与原型蒸馏
         - 面向 SOH/RUL 的多模态基础模型
-        - 面向 Battery Management Systems 的边缘智能
+        - 面向电池管理系统的边缘智能
 
   - block: markdown
     id: current-research
@@ -47,7 +47,7 @@ sections:
         </article>
         <article class="research-grid__item">
         <h3>基于 Jetson 的电池 SOH 边缘部署系统</h3>
-        <p>构建独立的边缘流程，将真实电池测量连接至信号采集、预处理、可复现实验数据存储和 Jetson 侧 SOH 推理；闭环部署与验证仍在进行中。</p>
+        <p>已完成钠离子电池恒流放电控制器的原理图与双层 PCB 设计，建立 ADS1115 采集与实验数据流程，正在开展 Jetson 端 SOH 推理测试。</p>
         </article>
         </div>
   - block: markdown
@@ -61,23 +61,23 @@ sections:
         <article class="academic-list__item">
         <h4>A Large Multimodal Foundation Model for Unified State-of-Health and Remaining Useful Life Estimation of Lithium-ion Batteries</h4>
         <p class="academic-list__meta">Wending Zhu, Xiang Li, Zihan Gong, Mamdouh Abdelsalam, Wei Zhang, and Shaojie Yang · <em>Journal of Energy Storage</em> 177 (2026): 123418 · 已发表</p>
-        <p>论文内容：面向异构电池数据的多模态基础模型，用于统一 SOH/RUL 估计，并结合 parameter-efficient fine-tuning 与 anomaly detection。<a href="https://doi.org/10.1016/j.est.2026.123418">DOI</a></p>
+        <p>面向异构电池数据，结合参数高效微调与异常检测，联合估计 SOH 和 RUL。<a href="https://doi.org/10.1016/j.est.2026.123418">DOI</a></p>
         </article>
         <article class="academic-list__item">
         <h4>Generalized Foundation Model for Lithium-ion Battery State-of-Health Prediction with Distribution Metric Learning</h4>
         <p class="academic-list__meta">Zihan Gong, Xiang Li, Wei Zhang, and Shaojie Yang · <em>Journal of Energy Storage</em> 150 (2026): 120566 · 已发表</p>
-        <p>论文内容：使用基于 MMD 的分布对齐与轻量化 ResNet–Transformer–KAN 架构开展多源、少样本 SOH 估计。<a href="https://doi.org/10.1016/j.est.2026.120566">DOI</a></p>
+        <p>使用基于 MMD 的分布对齐与轻量化 ResNet–Transformer–KAN 架构开展多源、少样本 SOH 估计。<a href="https://doi.org/10.1016/j.est.2026.120566">DOI</a></p>
         </article>
         </div>
         <div class="academic-list__group">
         <h3>审稿中</h3>
         <article class="academic-list__item">
         <h4>Task-Guided Prototype Distillation for Regression with Structure Preservation in Lithium-Ion Battery State-of-Health Estimation</h4>
-        <p class="academic-list__meta">Zihan Gong；其余作者：[TO BE PROVIDED] · <em>IEEE Transactions on Emerging Topics in Computational Intelligence</em> · 审稿中</p>
-        <p>研究摘要：将电池数据原型作为可学习变量，在高比例压缩下保留 SOH 标签语义、特征分布和退化序列结构。该论文在审稿期间不提供 manuscript PDF、supplementary material、private code 或 download link。</p>
+        <p class="academic-list__meta">Zihan Gong（第一作者） · <em>IEEE Transactions on Emerging Topics in Computational Intelligence</em> · 审稿中</p>
+        <p>将电池数据原型作为可学习变量，在高比例压缩下保留 SOH 标签语义、特征分布和退化序列结构。<a href="https://drive.google.com/file/d/1MOKocRbRqNEGhoGAEFaoRRUITHftQYKY/view" target="_blank" rel="noopener noreferrer">论文手稿（Google Drive）</a></p>
         </article>
         </div>
-        <p class="academic-list__more"><a href="publications/">查看全部论文记录</a></p>
+        <p class="academic-list__more"><a href="publications/">全部论文</a></p>
         </div>
   - block: markdown
     id: selected-projects
@@ -86,19 +86,9 @@ sections:
       text: |
         <div class="academic-list academic-project-list">
         <article class="academic-list__item">
-        <h3>Task-Guided Prototype Distillation</h3>
-        <p class="academic-list__meta">02/2026–Present · 导师：Xiang Li · 审稿中</p>
-        <p>建立面向电池老化序列回归的结构保持原型生成流程。<a href="projects/prototype-distillation/">查看项目记录</a></p>
-        </article>
-        <article class="academic-list__item">
         <h3>基于 Jetson 的电池 SOH 边缘部署系统</h3>
-        <p class="academic-list__meta">08/2026–Present · 导师：Xiang Li</p>
-        <p>构建面向真实电池测量的端到端边缘流程，覆盖数据采集、预处理、可复现实验数据存储和 Jetson 侧 SOH 推理；部署与参考 SOH 验证仍在进行中。<a href="projects/edge-soh-deployment/">查看项目记录</a></p>
-        </article>
-        <article class="academic-list__item">
-        <h3>Battery Dataset Processing and Infrastructure</h3>
-        <p class="academic-list__meta">03/2026–04/2026 · 导师：Xiang Li</p>
-        <p>构建可复现的 Python 数据流程，完成异构电池数据的 <code>.csv</code>/<code>.mat</code> 读取、异常值清理、256-point downsampling、<code>.pkl</code> 序列化，并验证 11 个数据集。<a href="projects/battery-dataset-processing/">查看项目记录</a></p>
+        <p class="academic-list__meta">08/2026–至今 · 导师：Xiang Li</p>
+        <p>已完成恒流放电控制器的原理图与双层 PCB 设计，建立 ADS1115 采集与实验数据流程，正在开展 Jetson 端 SOH 推理测试。<a href="projects/edge-soh-deployment/">项目详情</a></p>
         </article>
         </div>
   - block: markdown
@@ -106,8 +96,8 @@ sections:
     content:
       title: "联系方式"
       text: |
-        Email：[ZHGong_XJTU@163.com](mailto:ZHGong_XJTU@163.com)  
-        地址：Xi'an, Shaanxi, China  
-        GitHub：[github.com/asdstrind](https://github.com/asdstrind)  
+        Email：[ZHGong_XJTU@163.com](mailto:ZHGong_XJTU@163.com)\
+        地址：中国，陕西，西安
+        GitHub：[github.com/asdstrind](https://github.com/asdstrind)\
         Hugging Face：[huggingface.co/coinlearner](https://huggingface.co/coinlearner)
 ---

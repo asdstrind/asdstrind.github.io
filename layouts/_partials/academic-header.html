@@ -1,0 +1,21 @@
+{{- $isZh := eq .Lang "zh" -}}
+<header class="academic-header">
+  <div class="header-row">
+    {{ if .IsHome }}<h1 class="academic-brand">{{ site.Params.hugoblox.identity.name }}</h1>{{ else }}<a class="academic-brand" href="{{ "/" | relLangURL }}">{{ site.Params.hugoblox.identity.name }}</a>{{ end }}
+    <div class="header-tools">
+      <nav class="desktop-navigation" aria-label="{{ if $isZh }}主导航{{ else }}Primary navigation{{ end }}">{{ partial "academic-nav" . }}</nav>
+      <details class="mobile-navigation" data-mobile-menu>
+        <summary>{{ if $isZh }}菜单{{ else }}Menu{{ end }}</summary>
+        <nav aria-label="{{ if $isZh }}主导航{{ else }}Primary navigation{{ end }}">{{ partial "academic-nav" . }}</nav>
+      </details>
+      <nav class="language-links" aria-label="{{ if $isZh }}语言切换{{ else }}Language switcher{{ end }}">
+        {{ range .AllTranslations }}<a href="{{ .RelPermalink }}" lang="{{ .Lang }}"{{ if eq .Lang $.Lang }} class="is-current" aria-current="true"{{ end }}>{{ if eq .Lang "en" }}EN{{ else }}中文{{ end }}</a>{{ end }}
+      </nav>
+    </div>
+  </div>
+  {{ if .IsHome }}
+    {{ $profile := index (where .Params.sections "id" "profile") 0 }}
+    {{ $paragraphs := split (strings.TrimSpace $profile.content.text) "\n\n" }}
+    <div class="profile-meta"><p class="profile-role">{{ index $paragraphs 1 | markdownify }}</p><p class="profile-track">{{ index $paragraphs 2 | markdownify }}</p></div>
+  {{ end }}
+</header>

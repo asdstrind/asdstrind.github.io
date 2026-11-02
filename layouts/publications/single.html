@@ -3,20 +3,20 @@
 {{- $publicationsURL := "/publications/" | relLangURL -}}
 <article class="academic-detail academic-detail--publication" data-pagefind-body>
   <header class="academic-detail__header">
-    <p class="academic-detail__eyebrow">{{ if $isZh }}论文{{ else }}Publication{{ end }}</p>
+    <a class="detail-back" href="{{ $publicationsURL }}">← {{ if $isZh }}全部论文{{ else }}All publications{{ end }}</a>
     <h1 class="academic-detail__title" data-pagefind-meta="title">{{ .Title }}</h1>
   </header>
 
   <dl class="academic-detail__meta">
     {{ with .Params.authors }}
       <div class="academic-detail__meta-row">
-        <dt>{{ if $isZh }}作者{{ else }}Authors{{ end }}</dt>
+        <dt>{{ if $.Params.first_author }}{{ if $isZh }}第一作者{{ else }}First author{{ end }}{{ else }}{{ if $isZh }}作者{{ else }}Authors{{ end }}{{ end }}</dt>
         <dd>{{ delimit . ", " }}</dd>
       </div>
     {{ end }}
     {{ with .Params.publication }}
       <div class="academic-detail__meta-row">
-        <dt>{{ if $isZh }}发表载体{{ else }}Venue{{ end }}</dt>
+        <dt>{{ if eq $.Params.status "Under review" }}{{ if $isZh }}投稿期刊{{ else }}Submitted to{{ end }}{{ else }}{{ if $isZh }}期刊{{ else }}Journal{{ end }}{{ end }}</dt>
         <dd>{{ . | markdownify }}</dd>
       </div>
     {{ end }}
@@ -35,8 +35,10 @@
   </dl>
 
   {{ with .Params.publication_image }}
-    <section class="academic-detail__visual" aria-label="{{ if $isZh }}论文视觉预览{{ else }}Publication visual preview{{ end }}">
-      <img src="{{ . | relURL }}" alt="{{ if $isZh }}已发表论文视觉预览：{{ $.Title }}{{ else }}Published paper visual preview: {{ $.Title }}{{ end }}" loading="eager" decoding="async">
+    <section class="academic-detail__visual" aria-label="{{ if $isZh }}论文图示{{ else }}Publication figure{{ end }}">
+      {{ if $.Params.publication_image_zoom }}<a href="{{ . | relURL }}" target="_blank" rel="noopener noreferrer" aria-label="{{ if $isZh }}查看完整流程图{{ else }}View full-resolution flowchart{{ end }}">{{ end }}
+      <img src="{{ . | relURL }}" alt="{{ $.Params.publication_image_alt | default $.Title }}" loading="eager" decoding="async">
+      {{ if $.Params.publication_image_zoom }}</a>{{ end }}
     </section>
   {{ end }}
 
@@ -48,11 +50,8 @@
   {{ end }}
 
   <section class="academic-detail__section">
-    <h2>{{ if $isZh }}研究亮点{{ else }}Research highlights{{ end }}</h2>
     {{ if .Content }}
       <div class="academic-detail__content">{{ .Content }}</div>
-    {{ else }}
-      <p class="academic-detail__placeholder">{{ if $isZh }}暂未提供研究亮点。{{ else }}Research highlights have not been provided yet.{{ end }}</p>
     {{ end }}
   </section>
 

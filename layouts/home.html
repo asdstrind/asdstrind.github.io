@@ -1,0 +1,35 @@
+{{ define "main" }}
+{{- $isZh := eq .Lang "zh" -}}
+{{- $profile := index (where .Params.sections "id" "profile") 0 -}}
+{{- $paragraphs := split (strings.TrimSpace $profile.content.text) "\n\n" -}}
+{{- $bio := index $paragraphs 3 -}}
+{{- $intro := delimit (findRE `[^.]+[.]` $bio 2) "" -}}
+{{- if $isZh }}{{ $intro = delimit (findRE `[^。]+。` $bio 1) "" }}{{ end -}}
+{{- $remainder := strings.TrimSpace (strings.TrimPrefix $intro $bio) -}}
+{{- $interests := index (where .Params.sections "id" "research-interests") 0 -}}
+{{- $publications := index (where .Params.sections "id" "selected-publications") 0 -}}
+{{- $records := findRE `(?s)<article class="academic-list__item">.*?</article>` $publications.content.text -}}
+{{- $feature := index $records 1 -}}
+{{- $featurePage := site.GetPage "/publications/generalized-foundation-model" -}}
+{{- $title := replaceRE `(?s).*?<h4>(.*?)</h4>.*` "$1" $feature -}}
+{{- $meta := replaceRE `(?s).*?<p class="academic-list__meta">(.*?)</p>.*` "$1" $feature -}}
+{{- if $isZh }}{{ $meta = replace $meta "已发表" "<span class=\"keep-phrase\">已发表</span>" }}{{ end -}}
+{{- $focus := replaceRE `(?s).*?<p>(.*?)</p>\s*</article>.*` "$1" $feature -}}
+{{- $focus = strings.TrimSpace (replaceRE `<a [^>]*>.*?</a>` "" $focus) -}}
+{{- $doi := index (findRE `https://doi\.org/[^"<\s)]+` $feature 1) 0 -}}
+<p class="home-intro">{{ if $isZh }}{{ replace $intro "机器学习。" "<span class=\"keep-phrase\">机器学习。</span>" | safeHTML }}{{ else }}{{ $intro }}{{ end }}</p>
+<div class="home-feature">
+  <section class="featured-publication" aria-labelledby="featured-heading">
+    <h2 class="section-heading" id="featured-heading">{{ $publications.content.title }}</h2>
+    <article><h3 class="featured-title"><a href="{{ $featurePage.RelPermalink }}">{{ $title | safeHTML }}</a></h3><p class="publication-meta">{{ $meta | safeHTML }}</p>
+      <div class="featured-body"><a class="featured-image" href="{{ $featurePage.RelPermalink }}" aria-label="{{ $featurePage.Title }}"><img src="{{ $featurePage.Params.publication_image | relURL }}" alt="{{ $featurePage.Title }}" width="1600" height="1213" fetchpriority="high" decoding="async"></a><div class="featured-description"><p>{{ $focus | safeHTML }}</p><div class="text-links"><a href="{{ $doi | safeURL }}" target="_blank" rel="noopener noreferrer">DOI <span aria-hidden="true">↗</span></a><a href="{{ $featurePage.RelPermalink }}">{{ if $isZh }}论文详情{{ else }}Full record{{ end }} <span aria-hidden="true">→</span></a></div></div></div>
+    </article>
+  </section>
+  <aside class="research-interests" aria-labelledby="interests-heading"><h2 class="section-heading" id="interests-heading">{{ $interests.content.title }}</h2>{{ $interests.content.text | markdownify }}</aside>
+</div>
+<div class="home-quick-links"><a href="#contact" data-open-contact>Email</a><a href="{{ site.Params.externalLinks.github | safeURL }}" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="{{ site.Params.externalLinks.huggingFace | safeURL }}" target="_blank" rel="noopener noreferrer">Hugging Face <span aria-hidden="true">↗</span></a></div>
+{{ with $remainder }}<section class="home-section home-about" aria-labelledby="about-heading"><h2 id="about-heading">{{ if $isZh }}个人简介{{ else }}About{{ end }}</h2><div class="reading-copy">{{ . | markdownify }}</div></section>{{ end }}
+<section class="home-section" aria-labelledby="more-publications-heading"><div class="section-title-row"><h2 id="more-publications-heading">{{ if $isZh }}更多论文{{ else }}More publications{{ end }}</h2><a href="{{ "/publications/" | relLangURL }}">{{ if $isZh }}全部论文{{ else }}All publications{{ end }} <span aria-hidden="true">→</span></a></div><div class="academic-list">{{ range $index, $record := $records }}{{ if ne $index 1 }}{{ $record | safeHTML }}{{ end }}{{ end }}</div></section>
+{{ $projects := index (where .Params.sections "id" "selected-projects") 0 }}
+<section class="home-section" aria-labelledby="selected-projects-heading"><div class="section-title-row"><h2 id="selected-projects-heading">{{ $projects.content.title }}</h2><a href="{{ "/projects/" | relLangURL }}">{{ if $isZh }}全部项目{{ else }}All projects{{ end }} <span aria-hidden="true">→</span></a></div>{{ $projects.content.text | safeHTML }}</section>
+{{ end }}

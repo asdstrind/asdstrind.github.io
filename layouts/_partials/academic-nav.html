@@ -1,0 +1,8 @@
+{{- $context := . -}}
+{{- $isZh := eq .Lang "zh" -}}
+{{- $items := slice (dict "path" "/" "en" "Home" "zh" "首页" "section" "") (dict "path" "/publications/" "en" "Publications" "zh" "论文" "section" "publications") (dict "path" "/projects/" "en" "Projects" "zh" "项目" "section" "projects") (dict "path" "/cv/" "en" "CV" "zh" "简历" "section" "cv") -}}
+{{ range $items }}
+  {{ $active := or (and $context.IsHome (eq .section "")) (and (ne .section "") (eq $context.Section .section)) }}
+  <a href="{{ .path | relLangURL }}"{{ if $active }} class="is-current" aria-current="page"{{ end }}>{{ if $isZh }}{{ .zh }}{{ else }}{{ .en }}{{ end }}</a>
+{{ end }}
+<a href="#contact" data-open-contact>Email</a>

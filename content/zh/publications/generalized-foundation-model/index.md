@@ -11,15 +11,15 @@ year: "2026"
 status: "Published"
 publication_image: "/images/publications/generalized-foundation-model-preview.png"
 abstract: >-
-  本文面向 few-shot lithium-ion battery State-of-Health estimation，使用多个 source domains 的数据构建 generalized foundation model。方法通过 Maximum Mean Discrepancy 缩小 feature-distribution gaps，并结合 ResNet–Transformer hybrid 与 Kolmogorov–Arnold Network 提升 nonlinear representation，从 voltage、current 和 time data 中学习可迁移的 degradation knowledge。
+  面向少样本锂离子电池健康状态（SOH）估计，利用多源数据构建可泛化的基础模型。通过最大均值差异（MMD）缩小特征分布差异，结合 ResNet–Transformer 与 Kolmogorov–Arnold 网络，从电压、电流和时间序列中学习可迁移的退化特征。
 build:
   list: never
 ---
 
 ## 研究贡献
 
-该工作针对 battery types 与 operating conditions 造成的 distribution shifts，以及 target-domain labeled data 稀缺问题，结合 multi-source data curation、MMD-based feature alignment 和轻量化 CNN–Transformer–KAN model，并同时评估 cross-domain accuracy 与 BMS deployment constraints。
+针对电池类型与运行工况变化带来的分布偏移，以及目标域标注数据不足的问题，整合多源电池数据、MMD 特征对齐与轻量化 CNN–Transformer–KAN 模型，同时评估跨域精度和电池管理系统的部署需求。
 
-报告结果包括 cross-domain MAE < 1.1%、8.37M parameters、23.11 MMac FLOPs 和 8.9 ms inference time。
+跨域实验中，MAE 低于 1.1%；模型参数量为 8.37M，计算量为 23.11 MMac FLOPs，推理耗时为 8.9 ms。
 
 **DOI：** [10.1016/j.est.2026.120566](https://doi.org/10.1016/j.est.2026.120566)

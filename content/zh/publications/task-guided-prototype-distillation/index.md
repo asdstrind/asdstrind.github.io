@@ -3,18 +3,24 @@ title: "Task-Guided Prototype Distillation for Regression with Structure Preserv
 translationKey: "publication-task-guided-prototype-distillation"
 authors:
   - "Zihan Gong"
-  - "[TO BE PROVIDED]"
 publication: "IEEE Transactions on Emerging Topics in Computational Intelligence"
-year: "[TO BE PROVIDED]"
 status: "Under review"
+first_author: true
+publication_image: "/images/publications/task-guided-prototype-distillation-framework.png"
+publication_image_alt: "任务引导原型蒸馏流程：数据准备、原型优化与性能评估"
+publication_image_zoom: true
 build:
   list: never
 ---
 
 ## 研究摘要
 
-该 manuscript 研究如何将大规模 lithium-ion battery aging data 压缩为少量 learnable prototypes，同时保留 regression relationships、cross-sample distributions 和 degradation-sequence structure。
+将大规模锂离子电池老化数据压缩为少量可学习原型，同时保留回归关系、跨样本分布与退化序列结构。
 
-方法使用 SOH anchors 与 Huber regression loss 赋予 prototypes 健康状态语义，使用 Maximum Mean Discrepancy (MMD) 对齐 feature distributions，并加入 similarity constraints 与 2D total variation regularization。将电压和电流原型与固定的时间通道 t 一同转换为 GAF 表示后输入固定的 ResNet-2D 网络，通过该网络反向传播联合目标的梯度并仅更新原型中的 V、I；固定的 t 作为时间索引和 conditioning variable，用于保持时间顺序和物理一致性。ResNet-2D 用于指导原型优化，而 SOH 估计由独立的 CNN–Transformer–KAN 模型完成。submitted manuscript 的 HNEL setup 报告使用三个 synthetic prototypes 时 MAE 为 0.0192。
+方法通过 SOH 锚点与 Huber 回归损失保留健康状态语义，使用最大均值差异（MMD）对齐特征分布，并结合相似性约束与二维全变差正则化保持数据结构。
 
-**状态：** 审稿中。该 manuscript 的 PDF、supplementary material、private code 和 download links 均不提供。
+电压、电流原型与固定时间通道 t 经格拉姆角场（GAF）变换后输入固定的 ResNet-2D 网络。联合损失的梯度通过该网络反向传播，仅更新原型中的 V、I；t 保持固定，用作时间索引与条件变量。SOH 预测由 CNN–Transformer–KAN 模型完成。
+
+在 HNEL 实验中，三个合成原型的 MAE 为 0.0192。
+
+[作者手稿（Google Drive）](https://drive.google.com/file/d/1MOKocRbRqNEGhoGAEFaoRRUITHftQYKY/view)

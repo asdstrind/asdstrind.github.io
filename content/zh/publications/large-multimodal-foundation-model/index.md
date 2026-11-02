@@ -13,13 +13,13 @@ year: "2026"
 status: "Published"
 publication_image: "/images/publications/multimodal-foundation-model-preview.png"
 abstract: >-
-  本文面向不同 battery materials、duty cycles 和 working conditions 下的 SOH 与 RUL 联合估计，提出 large multimodal foundation model。流程结合 heterogeneous-data preprocessing、parameter-efficient fine-tuning、generalized degradation-feature extraction 和 joint SOH/RUL estimation。在 unseen batteries 上，报告的 SOH MAE 为 0.0195、RUL MAE 为 0.0961，并使用 anomaly detection 识别 early degradation signs。
+  针对不同电池材料、循环协议与运行工况，提出联合估计 SOH 与剩余使用寿命（RUL）的大规模多模态基础模型。方法结合异构数据预处理、参数高效微调与可泛化退化特征提取。在未见电池上的 SOH MAE 为 0.0195，RUL MAE 为 0.0961，并通过异常检测识别早期退化迹象。
 build:
   list: never
 ---
 
 ## 研究贡献
 
-论文面向异构 lithium-ion battery data 构建统一建模方法，将 multimodal representation learning 与 lightweight parameter-efficient fine-tuning 结合，在多类 degradation datasets 上评估 joint SOH/RUL prediction，并连接 condition monitoring 与 predictive maintenance。
+面向异构锂离子电池数据，结合多模态表示学习与轻量化参数高效微调，建立统一的 SOH/RUL 预测方法。研究在多类退化数据集上评估模型，为状态监测与预测性维护提供支持。
 
 **DOI：** [10.1016/j.est.2026.123418](https://doi.org/10.1016/j.est.2026.123418)

@@ -30,5 +30,3 @@ Contributed to a kinematic model for missile-UAV-smoke projectile systems and us
 ## Outcome
 
 **First Prize, China Undergraduate Mathematical Contest in Modeling (CUMCM), Shaanxi Division, 2025**
-
-The award was verified against the official 2025 Shaanxi provincial award list.

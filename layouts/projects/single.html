@@ -3,7 +3,7 @@
 {{- $projectsURL := "/projects/" | relLangURL -}}
 <article class="academic-detail academic-detail--project" data-pagefind-body>
   <header class="academic-detail__header">
-    <p class="academic-detail__eyebrow">{{ if $isZh }}项目{{ else }}Project{{ end }}</p>
+    <a class="detail-back" href="{{ $projectsURL }}">← {{ if $isZh }}全部项目{{ else }}All projects{{ end }}</a>
     <h1 class="academic-detail__title" data-pagefind-meta="title">{{ .Title }}</h1>
     {{ with .Params.description }}<p class="academic-detail__lede">{{ . | markdownify }}</p>{{ end }}
   </header>
@@ -39,10 +39,12 @@
         <dd><span class="academic-detail__status">{{ . }}</span></dd>
       </div>
     {{ end }}
+    {{ with .Params.status }}
+      <div class="academic-detail__meta-row"><dt>{{ if $isZh }}状态{{ else }}Status{{ end }}</dt><dd>{{ if and $isZh (eq . "Under review") }}审稿中{{ else }}{{ . }}{{ end }}</dd></div>
+    {{ end }}
   </dl>
 
   <section class="academic-detail__section">
-    <h2>{{ if $isZh }}项目详情{{ else }}Project details{{ end }}</h2>
     {{ if .Content }}
       <div class="academic-detail__content">{{ .Content }}</div>
     {{ else }}

@@ -1,0 +1,24 @@
+{{- $isZh := eq .Lang "zh" -}}
+{{- $external := site.Params.externalLinks -}}
+{{- $contact := index (where site.Home.Params.sections "id" "contact") 0 -}}
+{{- $location := "" -}}
+{{- with findRE `(?m)^(Location:|地址：)[^\r\n]+` $contact.content.text 1 -}}{{ $location = strings.TrimSpace (replaceRE `^(Location:|地址：)\s*` "" (index . 0)) }}{{- end -}}
+<footer class="academic-footer">
+  <div class="footer-links">
+    <details class="contact-menu" id="contact" data-contact>
+      <summary>Email</summary>
+      <div class="contact-panel">
+        <p class="contact-heading">{{ if $isZh }}联系方式{{ else }}Contact{{ end }}</p>
+        <span class="contact-address" data-email-address tabindex="-1">{{ $external.email }}</span>
+        <div class="contact-actions">
+          <button type="button" data-copy-email data-copy-label="{{ if $isZh }}复制邮箱{{ else }}Copy email{{ end }}" data-copied-label="{{ if $isZh }}已复制{{ else }}Copied{{ end }}" data-success="{{ if $isZh }}邮箱地址已复制。{{ else }}Email address copied.{{ end }}" data-failure="{{ if $isZh }}请选中上方邮箱地址手动复制。{{ else }}Select the address above to copy it.{{ end }}">{{ if $isZh }}复制邮箱{{ else }}Copy email{{ end }}</button>
+          <a href="mailto:{{ $external.email }}">{{ if $isZh }}写邮件{{ else }}Write an email{{ end }} <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="contact-status" role="status" aria-live="polite" data-copy-status></p>
+      </div>
+    </details>
+    {{ with $external.github }}<a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>{{ end }}
+    {{ with $external.huggingFace }}<a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">Hugging Face <span aria-hidden="true">↗</span></a>{{ end }}
+  </div>
+  {{ with $location }}<p class="footer-location">{{ . }}</p>{{ end }}
+</footer>

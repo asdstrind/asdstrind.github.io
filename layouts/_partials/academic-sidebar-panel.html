@@ -1,7 +1,6 @@
 {{- $current := .RelPermalink -}}
 {{- $homeURL := "/" | relLangURL -}}
 {{- $cvURL := "/cv/" | relLangURL -}}
-{{- $researchURL := "/research/" | relLangURL -}}
 {{- $publicationsURL := "/publications/" | relLangURL -}}
 {{- $projectsURL := "/projects/" | relLangURL -}}
 {{- $external := site.Params.externalLinks | default dict -}}
@@ -14,7 +13,6 @@
 
   <nav class="academic-sidebar__nav" aria-label="{{ if $isZh }}主导航{{ else }}Primary navigation{{ end }}">
     <a class="academic-sidebar__link{{ if .IsHome }} is-active{{ end }}" href="{{ $homeURL }}">{{ if $isZh }}首页{{ else }}Home{{ end }}</a>
-    <a class="academic-sidebar__link{{ if eq $current $researchURL }} is-active{{ end }}" href="{{ $researchURL }}">{{ if $isZh }}研究{{ else }}Research{{ end }}</a>
     <a class="academic-sidebar__link{{ if eq $current $publicationsURL }} is-active{{ end }}" href="{{ $publicationsURL }}">{{ if $isZh }}论文{{ else }}Publications{{ end }}</a>
     <a class="academic-sidebar__link{{ if eq $current $projectsURL }} is-active{{ end }}" href="{{ $projectsURL }}">{{ if $isZh }}项目{{ else }}Projects{{ end }}</a>
     <a class="academic-sidebar__link{{ if eq $current $cvURL }} is-active{{ end }}" href="{{ $cvURL }}">{{ if $isZh }}简历{{ else }}CV{{ end }}</a>

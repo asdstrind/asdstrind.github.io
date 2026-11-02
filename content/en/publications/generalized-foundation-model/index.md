@@ -20,6 +20,6 @@ build:
 
 The work addresses distribution shifts among battery types and operating conditions when labeled target-domain data are scarce. It combines multi-source data curation, MMD-based feature alignment, and a lightweight CNN–Transformer–KAN model, then evaluates both cross-domain accuracy and BMS deployment constraints.
 
-Reported results include cross-domain MAE below 1.1%, 8.37M parameters, 23.11 MMac FLOPs, and 8.9 ms inference time in the reported setup.
+Cross-domain experiments achieved MAE below 1.1%. The model has 8.37M parameters and requires 23.11 MMac FLOPs, with an inference time of 8.9 ms.
 
 **DOI:** [10.1016/j.est.2026.120566](https://doi.org/10.1016/j.est.2026.120566)

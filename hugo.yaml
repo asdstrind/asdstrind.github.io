@@ -19,9 +19,6 @@ languages:
         - name: "Home"
           pageRef: "/"
           weight: 10
-        - name: "Research"
-          pageRef: "/research"
-          weight: 20
         - name: "CV"
           pageRef: "/cv"
           weight: 30
@@ -41,9 +38,6 @@ languages:
         - name: "首页"
           pageRef: "/"
           weight: 10
-        - name: "研究"
-          pageRef: "/research"
-          weight: 20
         - name: "简历"
           pageRef: "/cv"
           weight: 30
